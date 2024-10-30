@@ -1,0 +1,426 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/22/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">5:46:30 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc">C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">30</td></tr>
+</table>
+</td>
+</table><a name="IDBV4KWFB21V1OQC3X2P1YRGF3K2C3TBV0IXUPFGL2BIIWS1QWASB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3ZWS0XQKLTXMCQ3W5G21CURPRIYPLSDTHJJTDFJYXQ2N0IXA3N4M">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDX30ZJWIVE5ZPNISW1PNVIM5K1NUKRKETYFKG4OJFPRRH3M21EURB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS2K3H35NXXH2PZ0W33BZIM3PVPOGFWT0K5QKVFHI3OKLSTM11EYG">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDM2UG5G5RNOPGCMW02AUYMOK1FVL4EMTTAK2GIJPVKA3SY3OARO">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIOFQRWZIINPUH2CLCUBMI0HMTKMW4ZLHLI3Y2B5AWY4A4TXCV3P">Width Constraint (Min=10mil) (Max=1000mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQACWP3KLVN5CGCWPZROBY0FKRBLTUAHG53MUZ3EEZXBI43O0XEJD">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCLIOE2UYAOR5CU5RYBWGAKGE2DF4YB2NWAEWOQIE3AOPYGE1P0N">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0UKPJGRIPQWOL5MOEQMCL0DDWLGAHPOF2NFCA5DXOXRWJBJYO0HI">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCTVZHUWTJY5KGIHOO5G0YRXQMEROICU3M3EYNQBYL3KCVGZV3HTG">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJDZKL3J24UA2BEBOKFPASZ0HPKDYQ3RCYA1PJFH1235ZRSCSZXYN">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWP0U5LJNJ3BPLUELA42BM0FZTG44NPAS4CV1KRHNTXHKSSRVTJHH">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVCGADHADNNL3LUPBDMOIC1YSDOGXCT4RTHXA5YBXNBY2T3VMVCYN">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOKWTCFNTL25YPMOAVRCQAFMWNKLSBWT1YW1NHSPRY5HBC5HMTPWN">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">30</td>
+</tr>
+</table><br><a name="IDS2K3H35NXXH2PZ0W33BZIM3PVPOGFWT0K5QKVFHI3OKLSTM11EYG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2691mil|Location2.X=2749mil|Location1.Y=4171mil|Location2.Y=4229mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2691mil|Location2.X=2749mil|Location1.Y=4171mil|Location2.Y=4229mil|Absolute=True">Un-Routed Net Constraint: Via (2720mil,4200mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2791mil|Location2.X=2849mil|Location1.Y=3251mil|Location2.Y=3309mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2791mil|Location2.X=2849mil|Location1.Y=3251mil|Location2.Y=3309mil|Absolute=True">Un-Routed Net Constraint: Via (2820mil,3280mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.122mil|Location2.X=3214.122mil|Location1.Y=2500.585mil|Location2.Y=2558.585mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3156.122mil|Location2.X=3214.122mil|Location1.Y=2500.585mil|Location2.Y=2558.585mil|Absolute=True">Un-Routed Net Constraint: Via (3185.122mil,2529.585mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3651mil|Location2.X=3709mil|Location1.Y=3091mil|Location2.Y=3149mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3651mil|Location2.X=3709mil|Location1.Y=3091mil|Location2.Y=3149mil|Absolute=True">Un-Routed Net Constraint: Via (3680mil,3120mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4351mil|Location2.X=4409mil|Location1.Y=3831mil|Location2.Y=3889mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4351mil|Location2.X=4409mil|Location1.Y=3831mil|Location2.Y=3889mil|Absolute=True">Un-Routed Net Constraint: Via (4380mil,3860mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4731mil|Location2.X=4789mil|Location1.Y=2991mil|Location2.Y=3049mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4731mil|Location2.X=4789mil|Location1.Y=2991mil|Location2.Y=3049mil|Absolute=True">Un-Routed Net Constraint: Via (4760mil,3020mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4811mil|Location2.X=4869mil|Location1.Y=3811mil|Location2.Y=3869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4811mil|Location2.X=4869mil|Location1.Y=3811mil|Location2.Y=3869mil|Absolute=True">Un-Routed Net Constraint: Via (4840mil,3840mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5531mil|Location2.X=5589mil|Location1.Y=3811mil|Location2.Y=3869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5531mil|Location2.X=5589mil|Location1.Y=3811mil|Location2.Y=3869mil|Absolute=True">Un-Routed Net Constraint: Via (5560mil,3840mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDCLIOE2UYAOR5CU5RYBWGAKGE2DF4YB2NWAEWOQIE3AOPYGE1P0N"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.312mil|Location2.X=5181.688mil|Location1.Y=2725.241mil|Location2.Y=2968.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.312mil|Location2.X=5181.688mil|Location1.Y=2725.241mil|Location2.Y=2968.617mil|Absolute=True">Hole Size Constraint: (242.126mil &gt; 100mil) Pad *XT1-1(5060mil,2846.929mil) on Multi-Layer Actual Hole Size = 242.126mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.312mil|Location2.X=5181.688mil|Location1.Y=3158.312mil|Location2.Y=3401.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4938.312mil|Location2.X=5181.688mil|Location1.Y=3158.312mil|Location2.Y=3401.688mil|Absolute=True">Hole Size Constraint: (242.126mil &gt; 100mil) Pad *XT1-2(5060mil,3280mil) on Multi-Layer Actual Hole Size = 242.126mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.241mil|Location2.X=4443.302mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4330.241mil|Location2.X=4443.302mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR1-MH1(4386.772mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4676.698mil|Location2.X=4789.759mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4676.698mil|Location2.X=4789.759mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR1-MH2(4733.228mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4990.241mil|Location2.X=5103.302mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4990.241mil|Location2.X=5103.302mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR2-MH1(5046.772mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5336.698mil|Location2.X=5449.759mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5336.698mil|Location2.X=5449.759mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR2-MH2(5393.228mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4331.816mil|Location2.X=4444.877mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4331.816mil|Location2.X=4444.877mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR3-MH1(4388.346mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4678.273mil|Location2.X=4791.334mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4678.273mil|Location2.X=4791.334mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR3-MH2(4734.803mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4988.666mil|Location2.X=5101.727mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4988.666mil|Location2.X=5101.727mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR4-MH1(5045.197mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5335.123mil|Location2.X=5448.184mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5335.123mil|Location2.X=5448.184mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR4-MH2(5391.654mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.879mil|Location2.X=4420.94mil|Location1.Y=2451.816mil|Location2.Y=2564.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.879mil|Location2.X=4420.94mil|Location1.Y=2451.816mil|Location2.Y=2564.877mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR5-MH1(4364.409mil,2508.347mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.879mil|Location2.X=4420.94mil|Location1.Y=2798.273mil|Location2.Y=2911.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4307.879mil|Location2.X=4420.94mil|Location1.Y=2798.273mil|Location2.Y=2911.334mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR5-MH2(4364.409mil,2854.803mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.879mil|Location2.X=3720.94mil|Location1.Y=2451.816mil|Location2.Y=2564.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.879mil|Location2.X=3720.94mil|Location1.Y=2451.816mil|Location2.Y=2564.877mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR6-MH1(3664.409mil,2508.347mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.879mil|Location2.X=3720.94mil|Location1.Y=2798.273mil|Location2.Y=2911.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3607.879mil|Location2.X=3720.94mil|Location1.Y=2798.273mil|Location2.Y=2911.334mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR6-MH2(3664.409mil,2854.803mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5651.816mil|Location2.X=5764.877mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5651.816mil|Location2.X=5764.877mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR7-MH1(5708.346mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5998.273mil|Location2.X=6111.334mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5998.273mil|Location2.X=6111.334mil|Location1.Y=4199.06mil|Location2.Y=4312.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR7-MH2(6054.803mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5648.666mil|Location2.X=5761.727mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5648.666mil|Location2.X=5761.727mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR9-MH1(5705.197mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5995.123mil|Location2.X=6108.184mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5995.123mil|Location2.X=6108.184mil|Location1.Y=4979.06mil|Location2.Y=5092.121mil|Absolute=True">Hole Size Constraint: (111.811mil &gt; 100mil) Pad VR9-MH2(6051.654mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJDZKL3J24UA2BEBOKFPASZ0HPKDYQ3RCYA1PJFH1235ZRSCSZXYN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.798mil|Location2.X=3104.048mil|Location1.Y=3115.517mil|Location2.Y=3126.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.798mil|Location2.X=3104.048mil|Location1.Y=3115.517mil|Location2.Y=3126.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.869mil &lt; 10mil) Between Pad Q4-1(3124.016mil,3130mil) on Bottom Layer And Track (3090.551mil,3005.197mil)(3090.551mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.798mil|Location2.X=3104.048mil|Location1.Y=3015.517mil|Location2.Y=3026.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.798mil|Location2.X=3104.048mil|Location1.Y=3015.517mil|Location2.Y=3026.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.869mil &lt; 10mil) Between Pad Q4-2(3124.016mil,3030mil) on Bottom Layer And Track (3090.551mil,3005.197mil)(3090.551mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2895.952mil|Location2.X=2907.202mil|Location1.Y=3015.517mil|Location2.Y=3026.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2895.952mil|Location2.X=2907.202mil|Location1.Y=3015.517mil|Location2.Y=3026.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.869mil &lt; 10mil) Between Pad Q4-3(2875.984mil,3030mil) on Bottom Layer And Track (2909.449mil,3005.197mil)(2909.449mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2895.952mil|Location2.X=2907.202mil|Location1.Y=3115.517mil|Location2.Y=3126.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2895.952mil|Location2.X=2907.202mil|Location1.Y=3115.517mil|Location2.Y=3126.767mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.869mil &lt; 10mil) Between Pad Q4-4(2875.984mil,3130mil) on Bottom Layer And Track (2909.449mil,3005.197mil)(2909.449mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

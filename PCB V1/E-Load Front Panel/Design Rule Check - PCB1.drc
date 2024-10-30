@@ -1,0 +1,78 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc
+Date     : 10/22/2024
+Time     : 5:46:30 PM
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Via (2720mil,4200mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (2820mil,3280mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (3185.122mil,2529.585mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (3680mil,3120mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (4380mil,3860mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (4760mil,3020mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (4840mil,3840mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Via (5560mil,3840mil) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
+Rule Violations :8
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=1000mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+   Violation between Hole Size Constraint: (242.126mil > 100mil) Pad *XT1-1(5060mil,2846.929mil) on Multi-Layer Actual Hole Size = 242.126mil
+   Violation between Hole Size Constraint: (242.126mil > 100mil) Pad *XT1-2(5060mil,3280mil) on Multi-Layer Actual Hole Size = 242.126mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR1-MH1(4386.772mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR1-MH2(4733.228mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR2-MH1(5046.772mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR2-MH2(5393.228mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR3-MH1(4388.346mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR3-MH2(4734.803mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR4-MH1(5045.197mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR4-MH2(5391.654mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR5-MH1(4364.409mil,2508.347mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR5-MH2(4364.409mil,2854.803mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR6-MH1(3664.409mil,2508.347mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR6-MH2(3664.409mil,2854.803mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR7-MH1(5708.346mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR7-MH2(6054.803mil,4255.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR9-MH1(5705.197mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+   Violation between Hole Size Constraint: (111.811mil > 100mil) Pad VR9-MH2(6051.654mil,5035.591mil) on Multi-Layer Actual Hole Size = 111.811mil
+Rule Violations :18
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (7.869mil < 10mil) Between Pad Q4-1(3124.016mil,3130mil) on Bottom Layer And Track (3090.551mil,3005.197mil)(3090.551mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.869mil < 10mil) Between Pad Q4-2(3124.016mil,3030mil) on Bottom Layer And Track (3090.551mil,3005.197mil)(3090.551mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.869mil < 10mil) Between Pad Q4-3(2875.984mil,3030mil) on Bottom Layer And Track (2909.449mil,3005.197mil)(2909.449mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.869mil < 10mil) Between Pad Q4-4(2875.984mil,3130mil) on Bottom Layer And Track (2909.449mil,3005.197mil)(2909.449mil,3154.803mil) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [7.869mil]
+Rule Violations :4
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 30
+Waived Violations : 0
+Time Elapsed        : 00:00:01
