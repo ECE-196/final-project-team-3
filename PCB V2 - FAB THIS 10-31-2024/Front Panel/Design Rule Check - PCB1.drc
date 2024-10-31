@@ -1,0 +1,59 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Public\Documents\Altium\E-Load Front Panel\PCB1.PcbDoc
+Date     : 10/31/2024
+Time     : 2:47:43 PM
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=25.4mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (6.15mm > 2.54mm) Pad *XT1-1(216.125mm,107.689mm) on Multi-Layer Actual Hole Size = 6.15mm
+   Violation between Hole Size Constraint: (6.15mm > 2.54mm) Pad *XT1-2(227.125mm,107.689mm) on Multi-Layer Actual Hole Size = 6.15mm
+   Violation between Hole Size Constraint: (6.15mm > 2.54mm) Pad *XT2-1(216.112mm,94.414mm) on Multi-Layer Actual Hole Size = 6.15mm
+   Violation between Hole Size Constraint: (6.15mm > 2.54mm) Pad *XT2-2(227.112mm,94.414mm) on Multi-Layer Actual Hole Size = 6.15mm
+Rule Violations :4
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.195mm < 0.254mm) Between Via (262.75mm,207.25mm) from Top Layer to Bottom Layer And Via (263.75mm,208.25mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.195mm] / [Bottom Solder] Mask Sliver [0.195mm]
+Rule Violations :1
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad *XT1-2(227.125mm,107.689mm) on Multi-Layer And Track (228.5mm,111mm)(228.5mm,111mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad Q4-1(213.1mm,223.48mm) on Bottom Layer And Track (213.95mm,222.85mm)(213.95mm,226.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad Q4-2(213.1mm,226.02mm) on Bottom Layer And Track (213.95mm,222.85mm)(213.95mm,226.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad Q4-3(219.4mm,226.02mm) on Bottom Layer And Track (218.55mm,222.85mm)(218.55mm,226.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad Q4-4(219.4mm,223.48mm) on Bottom Layer And Track (218.55mm,222.85mm)(218.55mm,226.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad TP14-1(186.25mm,169.75mm) on Bottom Layer And Text "TP14" (185.666mm,170.238mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]
+Rule Violations :6
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 11
+Waived Violations : 0
+Time Elapsed        : 00:00:01
