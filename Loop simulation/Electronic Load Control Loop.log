@@ -1,0 +1,61 @@
+Circuit: * C:\Users\Lucas\Desktop\Electronic Load Control Loop.asc
+
+Limiting rise time of source v2 to 4e-07
+Limiting fall time of source v2 to 4e-07
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+vernier = 0.5
+Gmin = 0.0294815
+vernier = 0.666667
+vernier = 0.888888
+Gmin = 0.00569201
+vernier = 1
+Gmin = 0.000653801
+Gmin = 7.02013e-05
+Gmin = 7.53781e-06
+Gmin = 8.09366e-07
+vernier = 0.5
+Gmin = 1.35789e-07
+vernier = 0.666667
+Gmin = 3.48633e-08
+vernier = 0.888888
+vernier = 1
+Gmin = 4.58977e-09
+Gmin = 4.92823e-10
+Gmin = 5.29164e-11
+vernier = 0.5
+Gmin = 9.86434e-12
+vernier = 0.666667
+Gmin = 2.44218e-12
+vernier = 0.333333
+vernier = 0.444444
+Gmin = 1.25281e-12
+vernier = 0.592592
+vernier = 0.790123
+Gmin = 3.08893e-13
+vernier = 1
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Tue Oct 15 20:36:53 2024
+Total elapsed time: 0.233 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 12176
+traniter = 11157
+tranpoints = 2636
+accept = 2183
+rejected = 453
+matrix size = 136
+fillins = 236
+solver = Normal
+Avg thread counts: 1.1/1.5/1.6/1.1
+Matrix Compiler1: 21.79 KB object code size  4.1/2.0/[1.8]
+Matrix Compiler2: 15.24 KB object code size  0.8/1.6/[0.6]
+
